@@ -128,7 +128,7 @@ app.use((req, res, next) =>{             //Phase-2(part->c) :  middleware ensure
     res.locals.success = req.flash("success");           // Make 'success' flash messages available to all EJS templates, 'res.locals' allows passing variables to every rendered view.
 
     res.locals.error = req.flash("error");                          // Make 'error' flash messages available to all EJS templates
-    res.locals.currUser = req.user;          // Make the currently logged-in user available in all templates as 'currUser', Passport automatically adds the logged-in user to req.user
+    res.locals.currUser = req.user || null;          // Make the currently logged-in user available in all templates as 'currUser', Passport automatically adds the logged-in user to req.user
 
     next();                                                              // Moves control to the next middleware or route handler.
 })
