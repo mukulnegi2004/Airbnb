@@ -56,6 +56,9 @@ main()
 //     res.send("hi i am root route");
 // });
 
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 
 // // Phase-1(part->b)------------------------------------------
