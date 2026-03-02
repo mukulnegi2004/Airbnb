@@ -1,43 +1,44 @@
 <% layout("/layouts/boilerplate") %>
 
 <div class="row mt-3">
-    <h1 class="col-6 offset-3">SignUp on Wanderlust</h1>
-    <div class="col-6 offset-3">
-        <form action="/signup" method="post" class="needs-validation" novalidate>
-            <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" id="username" name="username" class="form-control" required>
-                <div class="valid-feedback">looks good!</div>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" id="email" name="email" class="form-control" required>
-            </div>
-            <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" id="password" name="password" class="form-control" required>
-            </div>
-            <button class="btn btn-success">Signup</button>
-        </form>
 
+    <!-- Title -->
+    <h1 class="col-12 col-md-6 offset-md-3 text-center text-md-center text-truncate">SignUp on Wanderlust</h1>
+
+    <!-- Form -->
+    <div class="col-12 col-md-6 offset-md-3 mt-3">
+        <form action="/signup" method="post" class="needs-validation" novalidate>
+
+            <!-- Username -->
+            <div class="mb-3 row align-items-center">
+                <label for="username" class="col-4 col-form-label col-md-12">Username</label>
+                <div class="col-8 col-md-12">
+                    <input type="text" id="username" name="username" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="mb-3 row align-items-center">
+                <label for="email" class="col-4 col-form-label col-md-12">Email</label>
+                <div class="col-8 col-md-12">
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+            </div>
+
+            <!-- Password -->
+            <div class="mb-3 row align-items-center">
+                <label for="password" class="col-4 col-form-label col-md-12">Password</label>
+                <div class="col-8 col-md-12">
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-center mt-4 mb-4">
+                <button class="btn btn-success w-md-auto">Signup</button>
+            </div>
+
+            
+        </form>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

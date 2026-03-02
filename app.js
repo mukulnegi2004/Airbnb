@@ -38,6 +38,7 @@ app.listen(port, () => {                                                        
 })
 
 const dbUrl = process.env.ATLASDB_URL;
+// const dbUrl = "mongodb://127.0.0.1:27017/wanderlust";
 
 async function main() {                                                           // Connect to MongoDB
     // await mongoose.connect("mongodb://127.0.0.1:27017/wanderlust");
