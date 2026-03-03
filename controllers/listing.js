@@ -12,23 +12,23 @@ const geocodingClient = mbxGeocoding({ accessToken: mapToken });          // Cre
 
 // // Phase-3(part->a)--------------------------
 const index = async (req, res) => {                                                                  // Show all listings
-    const index = async (req, res) => {                                                                  // Show all listings
-        let {destination} = req.query;
+    let {destination} = req.query;
     
-        if(destination){                                                            // if search happen
-            const allListings = await Listing.find({$or : [
-                { location: { $regex: destination, $options: "i" } },
-                { country: { $regex: destination, $options: "i" } }]});
-    
-            if (allListings.length === 0) {
-                req.flash("error", "No listings found!");
-                return res.redirect("/listings");
-            }
-            return res.render("listings/index.ejs", { allListings });
-        }else{                                                                   
-            const allListings = await Listing.find({});
-            res.render("listings/index.ejs", { allListings });
+    if(destination){                                                            // if search happen
+        const allListings = await Listing.find({$or : [
+            { location: { $regex: destination, $options: "i" } },
+            { country: { $regex: destination, $options: "i" } }]});
+
+        if (allListings.length === 0) {
+            req.flash("error", "No listings found!");
+            return res.redirect("/listings");
         }
+        return res.render("listings/index.ejs", { allListings });
+    }else{                                                                   
+        const allListings = await Listing.find({});
+        res.render("listings/index.ejs", { allListings });
+    }
+        
 }
 
 
