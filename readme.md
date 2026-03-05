@@ -88,11 +88,26 @@ wanderlust/
 
 ## 🌐 Deployment
 
-The project can deployed on platforms:
+The project deployed on platform:
 - Render
 
 ---
 
-## 📄 License
+## 🌐 Live Demo
 
-This project is created for learning purposes.
+🚀 Try the application here:  
+👉 (https://airbnb-k6sz.onrender.com/listings)
+
+---
+
+## 📬 Connect with Me
+
+- 💼 [GitHub](https://github.com/mukulnegi2004)
+- 💬 [LinkedIn](https://www.linkedin.com/in/mukul-negi-431039378/)
+- 📫 Email: mannunegi126@gmail.com
+
+---
+
+⭐ If you like this project, feel free to star it and give feedback!
+
+
