@@ -96,7 +96,7 @@ The project deployed on platform:
 ## 🌐 Live Demo
 
 🚀 Try the application here:  
-👉 (https://airbnb-k6sz.onrender.com/listings)
+👉 (https://wanderlust-8y09.onrender.com)
 
 ---
 
@@ -109,5 +109,6 @@ The project deployed on platform:
 ---
 
 ⭐ If you like this project, feel free to star it and give feedback!
+
 
 
