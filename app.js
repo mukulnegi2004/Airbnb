@@ -1,6 +1,6 @@
 // // Phase-3(part->a)---------------------------------------
 //cloud setup
-if(process.env.NODE_ENV != "production"){         // If the app is **not** running in the production environment, then load environment variables from the `.env` file using the `dotenv` package, This helps keep sensitive data (like API keys, DB passwords) out of the codebase during development
+if (process.env.NODE_ENV != "production") {         // If the app is **not** running in the production environment, then load environment variables from the `.env` file using the `dotenv` package, This helps keep sensitive data (like API keys, DB passwords) out of the codebase during development
     require('dotenv').config();
 }
 
@@ -24,7 +24,7 @@ const flash = require("connect-flash");
 const passport = require("passport");
 const LocalStrategy = require("passport-local");
 const User = require("./models/user.js");
-const userRouter = require("./routes/user.js"); 
+const userRouter = require("./routes/user.js");
 
 
 app.set("view engine", "ejs");
@@ -32,10 +32,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
 
-let port = 8080;
-app.listen(port, () => {                                                          // Start server
-    console.log(`server is listening at port no: ${port} `)
-})
 
 const dbUrl = process.env.ATLASDB_URL;
 // const dbUrl = "mongodb://127.0.0.1:27017/wanderlust";
@@ -48,6 +44,11 @@ async function main() {                                                         
 main()
     .then(() => {
         console.log("connection successful");
+
+        let port = process.env.PORT || 8080;
+        app.listen(port, () => {                                                          // Start server
+            console.log(`server is listening at port no: ${port} `)
+        })
     }).catch((err) => {
         console.log(err);
     });
@@ -84,7 +85,7 @@ const store = MongoStore.create({
     touchAfter: 24 * 3600,                               // Session will be updated only once every 24 hours (in seconds), even if accessed multiple times — helps reduce DB writes.
 })
 
-store.on("error", () => {                                                // Event listener to catch and log any store-related errors
+store.on("error", (err) => {                                                // Event listener to catch and log any store-related errors
     console.log("error in mongo session store", err);
 })
 
@@ -94,7 +95,7 @@ store.on("error", () => {                                                // Even
 
 
 // // Phase-2(part->c)---------------------------------------
-const sessionOptions = {        
+const sessionOptions = {
     store: store,                                             // Use MongoDB store for session persistence                   
     secret: process.env.SECRET,                    //Secret key used to sign session ID cookie (prevents tampering), sends a cookie named 'connect.sid' (session ID) to browser
     resave: false,                               // If true, forces session to be saved to store on every request, even if not modified,  Usually kept false to improve performance
@@ -128,7 +129,7 @@ passport.serializeUser(User.serializeUser());                         // Seriali
 passport.deserializeUser(User.deserializeUser());                  // Deserialize user data from the session, allows retrieving the full user details from the stored session data
 
 
-app.use((req, res, next) =>{             //Phase-2(part->c) :  middleware ensures flash messages can be displayed on any page without manually passing them in res.render().
+app.use((req, res, next) => {             //Phase-2(part->c) :  middleware ensures flash messages can be displayed on any page without manually passing them in res.render().
     res.locals.success = req.flash("success");           // Make 'success' flash messages available to all EJS templates, 'res.locals' allows passing variables to every rendered view.
 
     res.locals.error = req.flash("error");                          // Make 'error' flash messages available to all EJS templates
@@ -210,3 +211,6 @@ app.use((err, req, res, next) => {                                   // Custom e
 })
 
 //----------------------------------------------
+
+
+
