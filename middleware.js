@@ -10,7 +10,7 @@ const isLoggedIn = (req, res, next) => {                         // Middleware t
 
         req.session.redirectUrl = req.originalUrl;              // Save the URL the user originally requested, So after logging in, they can be redirected back to that same page
 
-        req.flash("error", "you must be logged in to create listing");                    // If the user is not authenticated, set an error flash message
+        req.flash("error", "you must be logged in");                    // If the user is not authenticated, set an error flash message
         return res.redirect("/login");                                                    // Redirect the user to the login page
     }
     next();                                                        // If the user is logged in, allow the request to proceed to the next middleware/route
