@@ -54,12 +54,14 @@ main()
     });
 
 
-// app.get("/", (req, res) => {                                                    // Root route
-//     res.send("hi i am root route");
-// });
-
 app.get("/", (req, res) => {
     res.redirect("/listings");
+});
+
+app.get("/health", (req, res) => {                                 //so my bakend never sleeps in render
+    res.status(200).json({
+        status: "OK"
+    });
 });
 
 
@@ -139,42 +141,12 @@ app.use((req, res, next) => {             //Phase-2(part->c) :  middleware ensur
 })
 
 
-//Demo user 
-// app.get("/demouser", async (req, res) =>{                        // Route to create a demo (fake) user for testing
-//     let fakeUser = new User({
-//         email: "student@gmail.com",
-//         username: "mukul"
-//     });
-
-//     let registeredUser = await User.register(fakeUser, "1234");        // Register user using passport-local-mongoose,  It automatically hashes the password ("1234") and saves the user to the database
-
-//     res.send(registeredUser);                                         // Send the registered user details as a response
-// })
-
-
 
 //SignUp User-Get
 app.use("/", userRouter);                                // Parent route: /, All routes defined in user.js will be prefixed with /
 
 
 //---------------------------------------------------------
-
-
-
-
-//listing model
-// app.get("/testListing", async (req,res) => {
-//     let sampleListing = new Listing({
-//         title: "My New Villa",
-//         description: "By the beach",
-//         price: 1200,
-//         location: "Calangute,Goa",
-//         country: "India"
-//     })
-//     await sampleListing.save();
-//     console.log("Sample was Saved");
-//     res.send("successfull testing");
-// })
 
 
 
