@@ -70,7 +70,7 @@ app.get("/health", (req, res) => {                                 //so my baken
 const ejsMate = require("ejs-mate");
 const { wrap } = require("module");
 app.engine("ejs", ejsMate);
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(express.static(path.join(__dirname, "public")));
 
 //-------------------------------------------------------------
 
