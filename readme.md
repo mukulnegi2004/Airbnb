@@ -15,7 +15,7 @@ A full-stack **travel listing platform** where users can explore destinations, l
 [![Passport.js](https://img.shields.io/badge/Passport.js-Auth-34E27A?style=flat-square&logo=passport&logoColor=white)](https://www.passportjs.org/)
 [![Deployed on Render](https://img.shields.io/badge/Deployed%20on-Render-46E3B7?style=flat-square&logo=render&logoColor=white)](https://wanderlust-8y09.onrender.com)
 
-**[🚀 Live Demo](https://wanderlust-h0bt.onrender.com/)**
+**[🚀 Live Demo](https://airbnb-zoxp.onrender.com)**
 
 </div>
 
